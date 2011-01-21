@@ -138,7 +138,7 @@ module PermalinkFu
           value = send(scope)
           if value
             conditions.first << " and #{scope} = ?"
-            conditions       << send(scope)
+            conditions       << read_attribute(scope)
           else
             conditions.first << " and #{scope} IS NULL"
           end
